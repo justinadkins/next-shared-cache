@@ -1,3 +1,7 @@
+# Temporary fork of `@nescha/cache-handler`
+
+This repository includes a branch `justin/next15` which is a patched version of a PR started [here](https://github.com/caching-tools/next-shared-cache/pull/846). Use at your own discretion. I've published this 
+
 # `@neshca/cache-handler`
 
 [![npm package](https://img.shields.io/npm/v/@neshca/cache-handler/latest.svg)](https://www.npmjs.com/package/@neshca/cache-handler)
