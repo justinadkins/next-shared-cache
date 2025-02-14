@@ -783,11 +783,11 @@ export class CacheHandler implements NextCacheHandler {
         });
 
         if (cachedData?.value?.kind === 'APP_ROUTE') {
-            cachedData.value.body = Buffer.from(cachedData.value.body as unknown as string, 'base64');
+            cachedData.value.body = Buffer.from(cachedData.value.body as unknown as string, 'utf-8');
         }
 
         if (cachedData?.value?.kind === 'APP_PAGE') {
-            cachedData.value.rscData = Buffer.from(cachedData.value.rscData as unknown as string, 'base64');
+            cachedData.value.rscData = Buffer.from(cachedData.value.rscData as unknown as string, 'utf-8');
         }
 
         if (!cachedData && CacheHandler.#fallbackFalseRoutes.has(cacheKey)) {
@@ -843,8 +843,8 @@ export class CacheHandler implements NextCacheHandler {
                 cacheHandlerValueTags = getTagsFromHeaders(value.headers ?? {});
                 value = {
                     ...value,
-                    // replace the body with a base64 encoded string to save space
-                    rscData: value.rscData?.toString('base64') as unknown as Buffer,
+                    // Serialize buffer prior to storing in cache
+                    rscData: value.rscData?.toString() as unknown as Buffer,
                 }
                 break;
             }
@@ -852,8 +852,8 @@ export class CacheHandler implements NextCacheHandler {
                 // create a new object to avoid mutating the original value
                 value = {
                     ...value,
-                    // replace the body with a base64 encoded string to save space
-                    body: value.body.toString('base64') as unknown as Buffer,
+                    // Serialize buffer prior to storing in cache
+                    body: value.body.toString() as unknown as Buffer,
                 };
 
                 break;

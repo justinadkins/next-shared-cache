@@ -1,4 +1,6 @@
-# `@neshca/cache-handler`
+# Temporary fork of `@nescha/cache-handler`
+
+This repository includes a branch `justin/next15` which is a patched version of a PR started [here](https://github.com/caching-tools/next-shared-cache/pull/846). Use at your own discretion. I've published this at `@jadkins89/next-cache-handler` on `npm`.
 
 **Flexible API for replacing the default Next.js cache, enabling custom caching solutions for multi-instance self-hosted deployments.**
 
