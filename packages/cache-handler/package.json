@@ -1,6 +1,6 @@
 {
     "name": "@jadkins89/next-cache-handler",
-    "version": "1.8.2",
+    "version": "2.0.0",
     "description": "Next.js self-hosting simplified.",
     "keywords": [
         "cache",
